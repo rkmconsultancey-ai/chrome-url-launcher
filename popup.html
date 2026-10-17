@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 280px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      padding: 12px;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+    .launcher-box {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    input {
+      flex: 1;
+      padding: 6px 8px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 13px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #1a73e8;
+    }
+    .btn-launch {
+      padding: 6px 10px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .btn-launch:hover {
+      background-color: #1557b0;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #5f6368;
+      text-transform: uppercase;
+      margin: 10px 0 6px 2px;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-clear {
+      font-size: 10px;
+      color: #d93025;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .btn-clear:hover {
+      text-decoration: underline;
+    }
+    .divider {
+      height: 1px;
+      background-color: #dadce0;
+      margin: 10px 0;
+    }
+    .quick-links button, .history-links button {
+      display: block;
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: #3c4043;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: left;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .quick-links button:hover, .history-links button:hover {
+      background-color: #f1f3f4;
+    }
+    .quick-links button.hidden {
+      display: none;
+    }
+    .empty-text {
+      font-size: 12px;
+      color: #80868b;
+      font-style: italic;
+      padding-left: 4px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="launcher-box">
+    <input type="text" id="url-input" placeholder="Type chrome:// or search..." autofocus>
+    <button id="btn-custom-launch" class="btn-launch">Launch</button>
+  </div>
+
+  <div class="section-title">
+    <span>🕒 Recent Launches</span>
+    <button id="btn-clear-history" class="btn-clear">Clear</button>
+  </div>
+  <div id="history-container" class="history-links"></div>
+
+  <div class="divider"></div>
+
+  <div class="section-title">📂 Extension Directory</div>
+  <div class="quick-links" id="links-container">
+    <button data-url="chrome://settings">⚙️ Chrome Settings</button>
+    <button data-url="chrome://extensions">🧩 Chrome Extensions</button>
+    <button data-url="chrome://flags">🧪 Chrome Flags</button>
+    <button data-url="chrome://version">ℹ️ Chrome Version</button>
+    <button data-url="chrome://components">📦 Chrome Components</button>
+    <button data-url="chrome://downloads">⬇️ Downloads</button>
+    <button data-url="chrome://history">📜 History</button>
+    <button data-url="chrome://bookmarks">🔖 Bookmarks</button>
+    <button data-url="chrome://system">💻 System Info</button>
+    <button data-url="chrome://net-internals">🌐 Net Internals</button>
+    <button data-url="chrome://inspect">🔍 Inspect Elements</button>
+    <button data-url="chrome://gpu">🎮 GPU Status</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
