@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome URL Launcher",
+  "version": "1.2",
+  "description": "Launches internal chrome:// URLs safely using the extension API.",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
