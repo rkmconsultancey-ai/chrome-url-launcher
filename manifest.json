@@ -1,13 +1,25 @@
 {
   "manifest_version": 3,
   "name": "Chrome URL Launcher",
-  "version": "1.2",
-  "description": "Launches internal chrome:// URLs safely using the extension API.",
+  "version": "3.0",
+  "description": "Launches internal chrome:// URLs safely with policy error tracking.",
   "permissions": [
     "tabs",
     "storage"
   ],
   "action": {
     "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "launch-fallback": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "MacCtrl+Shift+Y"
+      },
+      "description": "Instantly launch your configured fallback URL"
+    }
   }
 }
